@@ -8,3 +8,5 @@ slice represents a heap.
 Write a program in the directory `swords` that solves the following problem:
 
 ![](swords.png)
+
+You may assume that the input is provided from `stdin` and is printed to `stdout`.
