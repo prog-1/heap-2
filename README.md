@@ -9,4 +9,4 @@ Write a program in the directory `swords` that solves the following problem:
 
 ![](swords.png)
 
-You may assume that the input is provided from `stdin` and is printed to `stdout`.
+You may assume that the input is provided from `stdin` and the output is printed to `stdout`.
