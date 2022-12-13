@@ -1,15 +1,14 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"io"
-	"os"
 	"sort"
 )
 
 func main() {
-	fmt.Println(solve(processInput(bufio.NewReader(os.Stdin))))
+	//fmt.Println(solve(processInput(bufio.NewReader(os.Stdin))))
+	fmt.Println(solve(1, []int{2, 2, 2, 3, 4, 2, 2, 4, 5, 3, 3, 3, 2, 2, 2}))
 }
 
 func processInput(r io.Reader) (k int, ages []int) {
@@ -42,30 +41,12 @@ func solve(k int, ages []int) (parents []int) {
 		}
 	}
 
-	// How to output index of the parent of each sword?
-	// Take index of current sword
-	// Find it in sorted index array
-	// Get parent of this element
-
-	find := func(s []int, v int) int {
-		for i, el := range s {
-			if el == v {
-				return i
-			}
-		}
-		return -1
-	}
-
 	parents = make([]int, len(ages))
-	for i := 0; i < len(parents); i++ {
-		j := find(indices, i) // getting index of index of sword
-		iip := (j - 1) / 2    // index of index of parent
-		if iip == j {         // child is its own parent
-			parents[i] = 0
-		} else {
-			ip := indices[iip]
-			parents[i] = ip + 1
-		}
+	parents[indices[0]] = 0
+	for i := 1; i < len(indices); i++ {
+		iip := (i - 1) / 2 // index of index of parent
+		ip := indices[iip]
+		parents[indices[i]] = ip + 1
 	}
 
 	return parents
