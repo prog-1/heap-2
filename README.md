@@ -1,6 +1,6 @@
 # Exercise 1
 
-Write a function (with tests) `func isHeap(s []int) bool` in the directyory `is_heap` that checks if a given
+Write a function (with tests) `func isHeap(s []int) bool` in the directory `is_heap` that checks if a given
 slice represents a heap.
 
 # Exercise 2
