@@ -1,21 +1,25 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"sort"
 )
 
 func main() {
-	// r := bufio.NewReader(os.Stdin)
-	// var n, k int
-	// fmt.Fscan(r, &n, &k)
-	// ages := make([]int, n)
-	// for i := 0; i < n; i++ {
-	// 	fmt.Fscan(r, &ages[i])
-	// }
+	r := bufio.NewReader(os.Stdin)
+	var n, k int
+	fmt.Fscan(r, &n, &k)
+	ages := make([]int, n)
+	for i := 0; i < n; i++ {
+		fmt.Fscan(r, &ages[i])
+	}
 
-	k := 3
-	ages := []int{10, 1, 1, 1}
+	// k := 3
+	// ages := []int{10, 1, 1, 1}
+
+	// fmt.Fprint(os.Stdout, solve(k, ages))
 	fmt.Println(solve(k, ages))
 }
 
