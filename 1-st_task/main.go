@@ -13,3 +13,7 @@ func isHeap(heap []int) bool {
 	}
 	return true
 }
+
+func main() {
+
+}
