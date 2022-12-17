@@ -6,11 +6,6 @@ import (
 	"sort"
 )
 
-func main() {
-	//fmt.Println(solve(processInput(bufio.NewReader(os.Stdin))))
-	fmt.Println(solve(1, []int{2, 2, 2, 3, 4, 2, 2, 4, 5, 3, 3, 3, 2, 2, 2}))
-}
-
 func processInput(r io.Reader) (k int, ages []int) {
 	// n - sword count
 	// k - min age for cloning
@@ -23,7 +18,7 @@ func processInput(r io.Reader) (k int, ages []int) {
 	return k, ages
 }
 
-func solve(k int, ages []int) (parents []int) {
+func solve(k int, ages []int) (parents []int, ok bool) {
 	indices := make([]int, len(ages))
 	for i := range indices {
 		indices[i] = i
@@ -37,7 +32,7 @@ func solve(k int, ages []int) (parents []int) {
 		child := ages[indices[childIndex]]
 		parent := ages[indices[(childIndex-1)/2]]
 		if parent-child < k {
-			return []int{-1}
+			return nil, false
 		}
 	}
 
@@ -49,5 +44,5 @@ func solve(k int, ages []int) (parents []int) {
 		parents[indices[i]] = ip + 1
 	}
 
-	return parents
+	return parents, true
 }
